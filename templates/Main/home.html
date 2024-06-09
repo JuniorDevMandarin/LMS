@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load i18n %}
 
-{% block title %} Home {% endblock %}
+{% block title %} Головна {% endblock %}
 {% load static %}
 {% block content %}
 
@@ -94,15 +94,15 @@
         <div class="row g-4 align-items-center">
             <div class="col-lg-6">
                 <div class="hero-content">
-                    <h5 class="wow fadeInUp">Kindergarten & Baby Care</h5>
+                    <h5 class="wow fadeInUp">Освіта - скарб. Праця - ключ до нього.</h5>
                     <h1 class="wow fadeInUp" data-wow-delay=".3s">
-                        Kids' Promising <br> <span>Tomorrow</span> Ahead
+                        Онлайн Школа <br> <span>Програмування</span> для дітей 9-17 років
                     </h1>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">Suspendisse non blandit sapien Nunc eleifend, enim et
-                        porta porta <br> eros risus tincidunt diam, vel sodales </p>
+                    <p class="wow fadeInUp" data-wow-delay=".5s">Kidsa School - це якісне онлайн навчання програмуванню
+                         на базі IT досвіду вчителів які працюють в сфері та мають реальний досвід. Це можливість для вашої дитини опанувати високооплачувану професію</p>
                     <div class="hero-button">
                         <a href="#aply" class="theme-btn wow fadeInUp" data-wow-delay=".7s">
-                            Apply Today <i class="fa-solid fa-arrow-right-long"></i>
+                            Запишишь вже зараз <i class="fa-solid fa-arrow-right-long"></i>
                         </a>
 <!--                        <span class="button-text wow fadeInUp" data-wow-delay=".8s">-->
 <!--                                    <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I"-->
@@ -141,8 +141,8 @@
     <div class="container container-wd">
         <div class="row align-items-end mb-7">
             <div class="col-xl mb-5 mb-xl-0">
-                <h1 class="mb-1">Featured Courses</h1>
-                <p class="font-size-lg text-capitalize mb-0">Discover your perfect program in our courses.</p>
+                <h1 class="mb-1">Рекомендовані курси</h1>
+                <p class="font-size-lg text-capitalize mb-0">Знайдіть свою ідеальну програму на наших курсах.</p>
             </div>
             <div class="col-xl-auto">
                 <!-- Nav -->
@@ -150,7 +150,7 @@
                      id="pills-tab" role="tablist">
                     <a class="btn-sm btn-pill me-1 mb-1 text-dark fw-medium px-6 active" id="pills-all-tab"
                        data-bs-toggle="tab" href="#pills-all" role="tab" aria-controls="pills-all" aria-selected="true">
-                        All Categories
+                       Всі категорії
                     </a>
                     {% for i in category %}
                     <a class="btn-sm btn-pill me-1 mb-1 text-dark fw-medium px-6" id="pills-art-tab"
@@ -243,7 +243,7 @@
                                                             </svg>
 
                                                         </div>
-                                                        <div class="font-size-sm">5 lessons</div>
+                                                        <div class="font-size-sm">32 лекції</div>
                                                     </div>
                                                 </li>
                                                 <li class="nav-item px-3">
@@ -259,7 +259,7 @@
                                                             </svg>
 
                                                         </div>
-                                                        <div class="font-size-sm">8h 12m</div>
+                                                        <div class="font-size-sm">50хв</div>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -273,8 +273,7 @@
                                         {% else %}
                                         <div class="col-auto px-2 text-right">
                                             <del class="font-size-sm">$ {{i.price}}</del>
-                                            <ins class="h4 mb-0 d-block mb-lg-n1">$ {% discount_calculation i.price
-                                                i.discount %}
+                                            <ins class="h4 mb-0 d-block mb-lg-n1">$ {% discount_calculation i.price i.discount %}
                                             </ins>
                                         </div>
                                         {% endif %}
@@ -606,11 +605,9 @@
     <div class="container container-wd">
         <div class="row align-items-center mb-6">
             <div class="col-md-6 order-2" data-aos="fade-left">
-                <h2>Learn at your own pace</h2>
-                <p class="line-clamp-3 line-height-md">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    montes.Join millions of people from around the world learning together. Online learning is as easy
-                    and natural as chatting.</p>
+                <h2>Індивідуальний підхід для кожної дитини</h2>
+                <p class="line-clamp-3 line-height-md">Ми розуміємо, що кожна дитина унікальна, тому наші програми
+                     надають можливість розвивати ваші навички відповідно до вашого темпу і інтересів</p>
             </div>
 
             <div class="col-md-6 order-1 mb-8 mb-md-0" data-aos="zoom-in">
@@ -620,17 +617,39 @@
 
         <div class="row align-items-center">
             <div class="col-md-6 order-2 order-md-1" data-aos="fade-right">
-                <h2>Community of opportunities</h2>
-                <p class="line-clamp-3 line-height-md">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-                    commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient
-                    montes.Join millions of people from around the world learning together. Online learning is as easy
-                    and natural as chatting.</p>
+                <h2>Висококваліфіковані викладачі</h2>
+                <p class="line-clamp-3 line-height-md">Наші викладачі - це команда досвідчених програмістів які мають великий та реальний досвід в сфері ІТ. Готові навчати та ділитись своїм досвідом </p>
+            </div>
+
+            {% comment %} <div class="col-md-6 order-1 mb-8 mb-md-0 order-md-2 text-right" data-aos="zoom-in">
+                <img class="img-fluid" src="{% static 'assets/img/post/post-11.png' %}" alt="...">
+            </div> {% endcomment %}
+        </div>
+
+        <div class="row align-items-center mb-6">
+            <div class="col-md-6 order-2" data-aos="fade-left">
+                <h2>Сучасні технології навчання</h2>
+                <p class="line-clamp-3 line-height-md">Ми використовуємо передові технології для забезпечення ефективного та захопливого 
+                    навчання. Ваші уроки будуть насичені інтерактивними методичними матеріалами та проєктами</p>
+            </div>
+
+           <div class="col-md-6 order-1 mb-8 mb-md-0" data-aos="zoom-in">
+                <img class="img-fluid" src="" >
+            </div> 
+        </div>
+
+
+        <div class="row align-items-center">
+            <div class="col-md-6 order-2 order-md-1" data-aos="fade-right">
+                <h2>Ком’юніті оточення для занурення в сферу ІТ</h2>
+                <p class="line-clamp-3 line-height-md">Ми створюємо зручні умови для занурення в ІТ середовище, щоб ви могли швидко і легко вивчати програмування. 80% практики 20% теорії</p>
             </div>
 
             <div class="col-md-6 order-1 mb-8 mb-md-0 order-md-2 text-right" data-aos="zoom-in">
                 <img class="img-fluid" src="{% static 'assets/img/post/post-11.png' %}" alt="...">
             </div>
         </div>
+
     </div>
 </section>
 

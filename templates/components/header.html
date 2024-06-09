@@ -60,6 +60,10 @@
             <div class="container-fluid">
                 <div class="header-top-wrapper">
                     <ul class="contact-list">
+                        <li>
+                            <i class="fa fa-map-marker"></i>
+                            <a  class="link">Київ, Україна</a>
+                        </li>
 
                         <li>
                             <i class="fa fa-phone"></i>
@@ -111,26 +115,26 @@
                                         <ul>
                                             <li class="has-dropdown active menu-thumb">
                                                 <a href="{% url 'home' %}">
-                                                {% trans "Home" %}
+                                                {% trans "Головна" %}
 
                                                 </a>
 
                                             </li>
                                             <li>
-                                                <a href="{% url 'about_us' %}">{% trans "About" %}</a>
+                                                <a href="{% url 'about_us' %}">{% trans "Про нас" %}</a>
                                             </li>
 
                                             {% if user.is_authenticated and user.first_name == '' %}
                                             <li>
-                                                <a href="{% url 'my_course' %}">{% trans "My Courses" %}</a>
+                                                <a href="{% url 'my_course' %}">{% trans "Мої Курси" %}</a>
                                             </li>
                                             <li>
                                                 <a class="nav-link dropdown-toggle" id="user" data-bs-toggle="dropdown" href="#" aria-haspopup="true" aria-expanded="false">
-                                                   {% trans "Welcome" %} , {{user.username}}
+                                                   {% trans "Вітаю" %} , {{user.username}}
                                                 </a>
                                                 <ul class="submenu">
-                                                    <li><a href="{% url 'profile' %}">{% trans "Account" %}</a></li>
-                                                    <li><a href="{% url 'logout' %}"> {% trans "Logout" %}</a></li>
+                                                    <li><a href="{% url 'profile' %}">{% trans "Акаунт" %}</a></li>
+                                                    <li><a href="{% url 'logout' %}"> {% trans "ВИйти" %}</a></li>
 
                                                 </ul>
                                             </li>
@@ -161,16 +165,12 @@
                             <div class="header-button">
                                 <a href="{% url 'contact_us' %}" class="theme-btn">
                                     <span>
-                                         {% trans "Contact Us" %}
+                                         {% trans "Записатись" %}
                                         <i class="fa-solid fa-arrow-right-long"></i>
                                     </span>
                                 </a>
                             </div>
-                            <div class="header__hamburger d-xl-none my-auto">
-                                <div class="sidebar__toggle">
-                                    <i class="fas fa-bars"></i>
-                                </div>
-                            </div>
+                          
                         </div>
                     </div>
                 </div>
