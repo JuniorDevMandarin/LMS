@@ -2,6 +2,7 @@ import os
 import django.urls
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import dj_database_url
 
 from environ import Env
 env = Env()
@@ -114,6 +115,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+POSTGRES_LOCALLY = False
+if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
+    DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
 
 # Password validation
