@@ -661,8 +661,8 @@
     <div class="container container-wd">
         <div class="bg-gradient-1 rounded-lg py-md-9 py-8 px-md-8 px-5">
             <div class="row align-items-center">
-                <div class="col-xl-7 mb-4 mb-xl-0 text-capitalize">
-                    <h1 class="text-white mb-3">Хочеш записатися на пробний урок?</h1>
+                <div class="col-xl-7 mb-4 mb-xl-0">
+                    <h2 class='text-white'>Хочеш записатися на пробний урок?</h2>
                     <p class="font-size-lg text-white mb-3">Заповни анкету, й незабаром ми зв’яжемося з тобою!</p>
                 </div>
 
@@ -675,30 +675,32 @@
                         <div class="form-group mb-6 col-xl-6">
 
                             <input type="text" class="form-control placeholder-1" id="exampleInputTitle1" placeholder="Name"
-                                   name="name">
+                                   name="name" required>
                         </div>
 
-                        <div class="form-group mb-6 col-xl-6">
-
-                            <input type="Email" class="form-control placeholder-1" id="email" placeholder="Email"
-                                   name="email">
-                        </div>
+                       
 
                         <div class="form-group mb-6 col-xl-6">
 
                             <input type="text" class="form-control placeholder-1" id="phone" placeholder="Phone"
-                                   name="phone">
+                                   name="phone" required>
+                        </div>
+
+                        <div class="form-group mb-6 col-12">
+
+                            <input type="Email" class="form-control placeholder-1" id="email" placeholder="Email"
+                                   name="email" required>
                         </div>
 
 
                         <div class="form-group mb-6 col-12">
 
                             <textarea class="form-control placeholder-1" id="exampleFormControlTextarea1" rows="6"
-                                      placeholder="Message" name="comment"></textarea>
+                                      placeholder="Message" name="comment" required></textarea>
                         </div>
 
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block mw-md-300p">SEND</button>
+                            <button type="submit" class="btn btn-primary btn-block mw-md-300p">Записатись</button>
                         </div>
                     </form>
                 </div>
