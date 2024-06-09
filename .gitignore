@@ -1,0 +1,7 @@
+venv/
+meddia/
+static/
+__pycache__/
+.env
+.DS_Store
+db.sqlite3

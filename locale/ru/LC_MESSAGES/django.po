@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-04 12:16+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\templates\Main\home.html:30
+msgid "Learn on your"
+msgstr "Учитесь на своем"
+
+#: .\templates\Main\home.html:30
+msgid "Schedule"
+msgstr "Графикe"
+
+#: .\templates\Main\home.html:35
+msgid ""
+"Technology is bringing a massive wave of evolution on learning things in "
+"different ways."
+msgstr ""
+"Технологии несут с собой огромную волну эволюции в изучении вещей разными "
+"способами"
+
+#: .\templates\Main\home.html:40
+msgid "GET STARTED"
+msgstr "Начнём"
+
+#: .\templates\Main\home.html:42
+msgid "VIEW COURSES"
+msgstr "ПОСМОТРЕТЬ КУРСЫ"
+
+#: .\templates\components\header.html:27
+msgid "Courses"
+msgstr "Курсы"
+
+#: .\templates\components\header.html:79
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\components\header.html:85
+msgid "About"
+msgstr "О сайте"
+
+#: .\templates\components\header.html:91
+msgid "Contact Us"
+msgstr "Свяжитесь с нами"
+
+#: .\templates\components\header.html:108
+msgid "My Courses"
+msgstr "Мои курсы"
+
+#: .\templates\components\header.html:115
+#: .\templates\components\header.html:139
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\components\header.html:121
+#: .\templates\components\header.html:145
+msgid "Account"
+msgstr "Аккаунт"
+
+#: .\templates\components\header.html:126
+#: .\templates\components\header.html:150
+msgid "Enrolled Courses"
+msgstr "Зачисленные курсы"
+
+#: .\templates\components\header.html:131
+#: .\templates\components\header.html:155
+msgid "Logout"
+msgstr "Выход"
+
+#: .\templates\components\header.html:191
+msgid "Change Language"
+msgstr "Изменить язык"
+
+#~ msgid "English"
+#~ msgstr "Привет"
+
+#~ msgid "Russian"
+#~ msgstr "Hello"
