@@ -165,17 +165,14 @@ def SEARCH_COURSE(request):
 
 def COURSE_DETAILS(request, slug):
 
-    current_lang = {'lang': getLanguageCookie(request)}
-    print(current_lang['lang'])
-    activate(current_lang['lang'])
-    if request.user.is_authenticated:
+        current_lang = {'lang': getLanguageCookie(request)}
+        print(current_lang['lang'])
+        activate(current_lang['lang'])
+    
         category = Categories.get_all_category(Categories)
         time_duration = Video.objects.filter(course__slug=slug).aggregate(sum=Sum('time_duration'))
         course_id = Course.objects.get(slug = slug)
-        try:
-            check_enroll = UserCourse.objects.get(user = request.user, course = course_id)
-        except UserCourse.DoesNotExist:
-            check_enroll = None
+        
         course = Course.objects.filter(slug=slug)
         c = Course.objects.get(slug=slug)
         comment = Comment.objects.filter(courses=c)
@@ -187,7 +184,7 @@ def COURSE_DETAILS(request, slug):
             'course': course,
             'category': category,
             'time_duration': time_duration,
-            'check_enroll': check_enroll,
+           
             'comment': comment,
             'newlan': current_lang['lang'],
         }
@@ -199,9 +196,7 @@ def COURSE_DETAILS(request, slug):
             user_comment = Comment(courses=c, user=current_user, review_title=review,description=content)
             user_comment.save()
         return render(request, 'course/course_details.html', context)
-    else:
-        return redirect('login')
-
+  
 
 def PAGE_NOT_FOUND(request):
     current_lang = {'lang': getLanguageCookie(request)}
