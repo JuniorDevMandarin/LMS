@@ -65,20 +65,14 @@ class Course(models.Model):
         ('PUBLISH', 'PUBLISH'),
         ('DRAFT', 'DRAFT'),
     )
-    stripe_price_id = models.CharField(max_length=300, blank=True, null=True, default="abc")
+
     featured_image = CloudinaryField('image')
-    featured_video = models.CharField(max_length=300, null=True)
     title = models.CharField(max_length=500)
-
-    title_ru = models.CharField(max_length=500, blank=True,default="")
-
-
     created_at = models.DateField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, null=True)
     category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     level = models.ForeignKey(Level, on_delete=models.CASCADE, null=True)
     description = models.TextField()
-    description_ru = models.TextField(default="")
     price = models.IntegerField(null=True, default=0)
     discount = models.IntegerField(null=True)
     language = models.ForeignKey(Language, on_delete=models.CASCADE, null=True)
