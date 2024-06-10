@@ -13,7 +13,7 @@ class Video_TabularInline(admin.TabularInline):
     model = Video
 
 class course_admin(admin.ModelAdmin):
-    inlines = (what_you_learn_TabularInline, Requirements_TabularInline, Video_TabularInline)
+    inlines = (what_you_learn_TabularInline, Requirements_TabularInline)
 
 
 class SubscribedUsersAdmin(admin.ModelAdmin):
