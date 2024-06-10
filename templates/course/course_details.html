@@ -171,25 +171,25 @@
                                             <i class="fa fa-youtube-play" aria-hidden="true" style="color:red;"></i>
 
                                         </div>
-                                        {% if check_enroll is not None%}
-                                            <a href="/course/watch-course/{{course.slug}}?lecture={{video.id}}">
+                                       
+                                        <a href="/course/watch-course/{{course.slug}}?lecture={{video.id}}">
                                                 <div class="ms-4" data-toggle="tooltip" title="Click And Show This Course!">
-                                            {{video.title}}
+                                        {{video.title}}
                                                 </div>
                                             </a>
-                                        {% else %}
-                                            {% if video.preview == True %}
+                                        
+                                        {% comment %} {% if video.preview == True %}
                                         <a href="/course/watch-course/{{course.slug}}?lecture={{video.id}}" class="rounded" data-fancybox>
                                         <div class="ms-4">
                                             {{video.title}}
                                         </div>
-                                            </a>
+                                        </a>
                                         {% else %}
                                         <div class="ms-4" data-toggle="tooltip" title="Enroll This Course!">
                                             {{video.title}}
                                         </div>
                                         {% endif %}
-                                        {% endif %}
+                                       {% endcomment %}
 
 
                                     </div>

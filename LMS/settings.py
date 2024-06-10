@@ -3,7 +3,7 @@ import django.urls
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 import dj_database_url
-
+import cloudinary
 from environ import Env
 env = Env()
 Env.read_env()
@@ -117,7 +117,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-POSTGRES_LOCALLY = True
+POSTGRES_LOCALLY = False
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DATABASES['default'] = dj_database_url.parse(env('DATABASE_URL'))
 
@@ -166,6 +166,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
 if ENVIRONMENT == 'production' or POSTGRES_LOCALLY == True:
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
@@ -174,6 +175,12 @@ CLOUDINARY_STORAGE = {
     'API_KEY': env('CLOUD_API_KEY'),
     'API_SECRET': env('CLOUD_API_SECRET'),
 }
+
+cloudinary.config(
+    cloud_name = env('CLOUD_NAME'),
+    api_key = env('CLOUD_API_KEY'),
+    api_secret = env('CLOUD_API_SECRET')
+)
 
 
 LANGUAGES = [

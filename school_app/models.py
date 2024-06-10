@@ -4,7 +4,7 @@ from django.utils.text import slugify
 from django.db.models.signals import pre_save
 from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from cloudinary.models import CloudinaryField
 class Categories(models.Model):
     icon = models.CharField(max_length=200, null=True)
     name = models.CharField(max_length=200)
@@ -66,7 +66,7 @@ class Course(models.Model):
         ('DRAFT', 'DRAFT'),
     )
     stripe_price_id = models.CharField(max_length=300, blank=True, null=True, default="abc")
-    featured_image = models.ImageField(upload_to="Media/featured_img", null=True)
+    featured_image = CloudinaryField('image')
     featured_video = models.CharField(max_length=300, null=True)
     title = models.CharField(max_length=500)
 
