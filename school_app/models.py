@@ -17,7 +17,7 @@ class Categories(models.Model):
 
 
 class Author(models.Model):
-    author_profile = models.ImageField(upload_to='Media/author')
+    author_profile = CloudinaryField('image')
     name = models.CharField(max_length=100, null=True)
     about_author = models.TextField()
 
@@ -157,12 +157,14 @@ class Video(models.Model):
     time_duration = models.IntegerField(null=True)
     preview = models.BooleanField(default=False)
     description = RichTextUploadingField(blank=True, null=True)
-    description2 = RichTextUploadingField(blank=True, null=True, config_name='special')
+    solution = RichTextUploadingField(blank=True, null=True, config_name='special')
     code = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):
         return self.title
-
+    class Meta:
+        verbose_name = 'Assignment'
+        verbose_name_plural = 'Assignments'
 
 class Comment_video_lecture(models.Model):
     videos = models.ForeignKey(Video, on_delete=models.CASCADE, null=True)
@@ -200,10 +202,10 @@ class Payment(models.Model):
         return self.user.first_name + " -- " + self.course.title
 
 
-class SubscribedUsers(models.Model):
-    name = models.CharField(max_length=100)
-    email = models.EmailField(unique=True, max_length=100)
-    created_date = models.DateTimeField('Date created', default=timezone.now)
+# class SubscribedUsers(models.Model):
+#     name = models.CharField(max_length=100)
+#     email = models.EmailField(unique=True, max_length=100)
+#     created_date = models.DateTimeField('Date created', default=timezone.now)
 
-    def __str__(self):
-        return self.email
+#     def __str__(self):
+#         return self.email

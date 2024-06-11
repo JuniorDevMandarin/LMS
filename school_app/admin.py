@@ -16,8 +16,8 @@ class course_admin(admin.ModelAdmin):
     inlines = (what_you_learn_TabularInline, Requirements_TabularInline)
 
 
-class SubscribedUsersAdmin(admin.ModelAdmin):
-    list_display = ('email', 'name', 'created_date')
+# class SubscribedUsersAdmin(admin.ModelAdmin):
+#     list_display = ('email', 'name', 'created_date')
 
 class BlogPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'date')
@@ -35,5 +35,5 @@ admin.site.register(UserCourse)
 admin.site.register(Payment)
 admin.site.register(Comment)
 admin.site.register(Comment_video_lecture)
-admin.site.register(SubscribedUsers, SubscribedUsersAdmin)
+# admin.site.register(SubscribedUsers, SubscribedUsersAdmin)
 admin.site.register(BlogPost, )

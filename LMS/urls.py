@@ -34,8 +34,8 @@ urlpatterns = [
     path('cancel', cancel_page, name='cancel'),
     path('success/<str:slug>', success_page, name='success'),
     path('course/watch-course/<slug:slug>', views.WATCH_COURSE, name='watch_course'),
-    path('subscribe', views.subscribe, name='subscribe'),
-    path('newsletter', views.newsletter, name='newsletter'),
+    # path('subscribe', views.subscribe, name='subscribe'),
+    # path('newsletter', views.newsletter, name='newsletter'),
     path('post/<slug:slug>/', views.post_detail, name='post_detail')
 
 

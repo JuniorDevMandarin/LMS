@@ -3,7 +3,7 @@ import stripe
 from django.shortcuts import redirect, render
 from django.contrib import messages
 from django.contrib.auth.models import User
-from school_app.models import Categories, Course, Level, Video, UserCourse, Payment, SubscribedUsers, Comment, Comment_video_lecture, BlogPost
+from school_app.models import Categories, Course, Level, Video, UserCourse, Payment, Comment, Comment_video_lecture, BlogPost
 from django.template.loader import render_to_string
 from django.http import JsonResponse
 from django.core.validators import validate_email
@@ -387,59 +387,59 @@ def WATCH_COURSE(request, slug):
     return render(request, 'course/watch-course.html', context)
 
 
-def subscribe(request):
-    current_lang = {'lang': getLanguageCookie(request)}
-    if request.method == 'POST':
-        email = request.POST.get('email', None)
+# def subscribe(request):
+#     current_lang = {'lang': getLanguageCookie(request)}
+#     if request.method == 'POST':
+#         email = request.POST.get('email', None)
 
-        if not email:
-            messages.error(request, 'You must Type logit email to subscribe to a Newsletter')
-            return redirect("/")
+#         if not email:
+#             messages.error(request, 'You must Type logit email to subscribe to a Newsletter')
+#             return redirect("/")
 
-        if get_user_model().objects.filter(email=email).first():
-            messages.error(request, f'Found registered user with associated {email}. You must login to subscribe or unsubscribe')
-            return redirect(request.META.get("HTTP_REFERER",'/'))
+#         if get_user_model().objects.filter(email=email).first():
+#             messages.error(request, f'Found registered user with associated {email}. You must login to subscribe or unsubscribe')
+#             return redirect(request.META.get("HTTP_REFERER",'/'))
 
-        subscribe_user = SubscribedUsers.objects.filter(email=email).first()
-        if subscribe_user:
-            messages.error(request, f' {email} email address is already subscriber.')
-            return redirect(request.META.get("HTTP_REFERER",'/'))
-        try:
-            validate_email(email)
-        except ValidationError as e:
-            messages.error(request, e.messages[0])
-            return redirect("/")
+#         subscribe_user = SubscribedUsers.objects.filter(email=email).first()
+#         if subscribe_user:
+#             messages.error(request, f' {email} email address is already subscriber.')
+#             return redirect(request.META.get("HTTP_REFERER",'/'))
+#         try:
+#             validate_email(email)
+#         except ValidationError as e:
+#             messages.error(request, e.messages[0])
+#             return redirect("/")
 
-        subscribe_model_instance = SubscribedUsers()
-        subscribe_model_instance.email = email
-        subscribe_model_instance.save()
-        messages.success(request, f'{email} email was successfully subscribed to our newsletter!')
-        return render(request, 'Main/home.html')
+#         subscribe_model_instance = SubscribedUsers()
+#         subscribe_model_instance.email = email
+#         subscribe_model_instance.save()
+#         messages.success(request, f'{email} email was successfully subscribed to our newsletter!')
+#         return render(request, 'Main/home.html')
 
 
 
-@user_is_superuser
-def newsletter(request):
-    current_lang = {'lang': getLanguageCookie(request)}
-    if request.method == 'POST':
-        form = NewsletterForm(request.POST)
-        if form.is_valid():
-            subject = form.cleaned_data.get('subject')
-            receivers = form.cleaned_data.get('receivers').split(',')
-            email_message = form.cleaned_data.get('message')
+# @user_is_superuser
+# def newsletter(request):
+#     current_lang = {'lang': getLanguageCookie(request)}
+#     if request.method == 'POST':
+#         form = NewsletterForm(request.POST)
+#         if form.is_valid():
+#             subject = form.cleaned_data.get('subject')
+#             receivers = form.cleaned_data.get('receivers').split(',')
+#             email_message = form.cleaned_data.get('message')
 
-            mail = EmailMessage(subject, email_message, f"PyLessons <{request.user.email}>", bcc=receivers)
-            mail.content_subtype = 'html'
+#             mail = EmailMessage(subject, email_message, f"PyLessons <{request.user.email}>", bcc=receivers)
+#             mail.content_subtype = 'html'
 
-            if mail.send():
-                messages.success(request, 'Email sent succesfully')
-            else:
-                messages.error(request, 'There was an error sending email')
-        else:
-            for error in list(form.errors.values()):
-                messages.error(request, error)
+#             if mail.send():
+#                 messages.success(request, 'Email sent succesfully')
+#             else:
+#                 messages.error(request, 'There was an error sending email')
+#         else:
+#             for error in list(form.errors.values()):
+#                 messages.error(request, error)
 
-        return redirect('newsletter')
-    form = NewsletterForm()
-    form.fields['receivers'].initial = ','.join([active.email for active in SubscribedUsers.objects.all()])
-    return render(request=request, template_name='Main/newsletter.html', context={'form': form})
+#         return redirect('newsletter')
+#     form = NewsletterForm()
+#     form.fields['receivers'].initial = ','.join([active.email for active in SubscribedUsers.objects.all()])
+#     return render(request=request, template_name='Main/newsletter.html', context={'form': form})
