@@ -157,7 +157,7 @@ class Video(models.Model):
     time_duration = models.IntegerField(null=True)
     preview = models.BooleanField(default=False)
     description = RichTextUploadingField(blank=True, null=True)
-    solution = RichTextUploadingField(blank=True, null=True, config_name='special')
+    solution = RichTextUploadingField(blank=True, null=True)
     code = RichTextUploadingField(blank=True, null=True)
 
     def __str__(self):

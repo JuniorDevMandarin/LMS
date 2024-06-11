@@ -52,25 +52,12 @@ INSTALLED_APPS = [
 ]
 CKEDITOR_UPLOAD_PATH = "uploads/"
 CKEDITOR_CONFIGS = {
-        'default': {
-            'toolbar': 'Custom',
-            'height': 500,
- 
-            'toolbar_Custom':[
-                ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker','Undo', 'CodeSnippet'],
-                ['Link', 'Unlink', 'Anchor'],
-                ['Image', 'Flash', 'Table', 'HorizontalRule'],
-                ['TextColor', 'BGColor'],
-                ['Smiley', 'SpecialChar'], ['Source'],
-            ],
-        },
-        'special': {
-            'toolbar': 'Special',
-            'toolbar_Special':[
-                ['Bold', 'CodeSnippet'],
-        ],
+    'default': {
+        'height': 'full', 
+        'width': 'full', 
         'extraPlugins': 'codesnippet',
-    }
+        'toolbar':'full',
+    },
 }
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
